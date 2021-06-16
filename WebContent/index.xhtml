@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Welcome to JSF</title>
+</head>
+<body bgcolor="#DCDCD0">
+<f:view>
+	<h1>Person und Adresse</h1>
+	<p><h:form>
+		<p>Name: </p>
+		<h:inputText value="#{personBean.person.name}" size="40" />
+		<p>Vorname: </p>
+		<h:inputText value="#{personBean.person.vorname}" size="40" />
+		
+		<p>Alter: </p>
+		<h:inputText id="alter" value="#{personBean.person.alter}" size="40" validatorMessage="age only between 18 and 100">
+			<f:validateLongRange minimum="18" maximum="100" />  
+		</h:inputText>
+		<h:message for="alter" />
+		
+		
+		<p>Email: </p>
+		<h:inputText id="email" required="true" label="email" size="40"
+        	requiredMessage="Please enter your email address."
+        	validatorMessage="Invalid email format"
+        	value="#{personBean.person.email}">
+      		<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+    	</h:inputText>
+    	<h:message for="email" />
+
+		
+		<h:commandButton value="Speichern" action="#{personBean.submit}"/>
+		
+	</h:form></p>
+	
+	<hr />
+	<h1>Ausgabe</h1>
+	<p>
+	<h:outputText value="#{personBean.person.name}, " />
+	<h:outputText value="#{personBean.person.vorname}, " />
+	<h:outputText value="#{personBean.person.alter}, " />
+	<h:outputText value="#{personBean.person.email}, " />
+	
+	</p>
+	
+	<h1>Congratulations</h1>
+	<p><h:outputText value="#{helloBean.helloString}" /></p>
+	<hr />
+	<h1>Replace Message</h1>
+	<p><h:form>
+		<h:inputText value="#{helloBean.helloString}" size="40" />
+		<h:commandButton value="Neu laden" />
+		<h:commandButton action="#{helloBean.resetMessage}" value="Reset" />
+	</h:form></p>
+	<hr />
+	<h1>Clock</h1>
+	<p><h:form>
+		<h:outputText value="The actual time is #{helloBean.actualTime}" />
+		<h:commandButton value="Refresh" immediate="true" />
+	</h:form></p>
+	<hr />
+	
+	
+</f:view>
+</body>
+</html>

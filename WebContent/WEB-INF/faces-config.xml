@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<application>
+		<!--<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>-->
+		<locale-config>
+			<default-locale>de</default-locale>
+			<supported-locale>de</supported-locale>
+			<supported-locale>en</supported-locale>
+		</locale-config>
+	</application>
+
+	<!-- ============= -->
+	<!-- Managed Beans -->
+	<!-- ============= -->
+
+	<!-- Skeleton -->
+	<!--	<managed-bean>-->
+	<!--		<description>-->
+	<!--					</description>-->
+	<!--		<managed-bean-name></managed-bean-name>-->
+	<!--		<managed-bean-class>-->
+	<!--		</managed-bean-class>-->
+	<!--		<managed-bean-scope>session</managed-bean-scope>-->
+	<!--	</managed-bean>-->
+
+	<!-- 
+	<managed-bean>
+		<description>HelloWorld Bean</description>
+		<managed-bean-name>helloBean</managed-bean-name>
+		<managed-bean-class>
+			de.oio.jsf.HelloWorldBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	 -->
+	
+	 
+	<!-- ================ -->
+	<!-- Navigation Rules -->
+	<!-- ================ -->
+	<!-- Skeleton -->
+	<!--	<navigation-rule>-->
+	<!--		<from-view-id></from-view-id>-->
+	<!--		<navigation-case>-->
+	<!--			<from-action></from-action>-->
+	<!--			<from-outcome></from-outcome>-->
+	<!--			<to-view-id></to-view-id>-->
+	<!--			<redirect />-->
+	<!--		</navigation-case>-->
+	<!--	</navigation-rule>-->
+	
+	
+		<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{personBean.submit}</from-action>
+			<from-outcome>details</from-outcome>
+			<to-view-id>details.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- ========= -->
+	<!-- Converter -->
+	<!-- ========= -->
+	<!-- Skeleton -->
+	<!--	<converter>-->
+	<!--		<description></description>-->
+	<!--		<converter-for-class>-->
+	<!--		</converter-for-class>-->
+	<!--		<converter-class>-->
+	<!--		</converter-class>-->
+	<!--	</converter>-->
+
+	<!-- ========= -->
+	<!-- Validator -->
+	<!-- ========= -->
+	<!--	<validator>-->
+	<!--		<description></description>-->
+	<!--		<validator-id></validator-id>-->
+	<!--		<validator-class>-->
+	<!--		</validator-class>-->
+	<!--	</validator>-->
+
+</faces-config>
