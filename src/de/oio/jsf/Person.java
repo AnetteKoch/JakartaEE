@@ -3,15 +3,29 @@ package de.oio.jsf;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String vorname;
 	private String name;
 	private String email;
 	private int alter = 25;
-	private List<Address> addresses;
+	private ArrayList<Address> addresses;
 	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getVorname() {
 		return vorname;
 	}

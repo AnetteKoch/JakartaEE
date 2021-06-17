@@ -3,7 +3,10 @@ package de.oio.jsf;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Named(value="personBean")
 @SessionScoped
@@ -12,6 +15,7 @@ public class PersonBean implements Serializable {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	Person person = new Person();
 
@@ -38,6 +42,8 @@ public class PersonBean implements Serializable {
 		System.out.println(result);
 		return result;
 	}
+
+	
 	
 
 }
