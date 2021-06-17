@@ -2,26 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-><head>
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
 <title>Welcome to JSF</title>
-</head>
-<body bgcolor="#DCDCD0">
+	<h:outputStylesheet library="default" name="css/bootstrap.min.css" />
+	<h:outputStylesheet library="default" name="css/bootstrap-responsive.min.css" />
+	<h:outputStylesheet library="default" name="css/styles.css" />
+	<h:outputScript library="default" name="js/bootstrap.min.js" />
+</h:head>
+<body id="htmlbody">
 <f:view>
+<div class="container">
 <h1>Ausgabe</h1>
 	<p>
 	<h:outputText value="#{personBean.person.name}, " />
 	<h:outputText value="#{personBean.person.vorname}, " />
 	<h:outputText value="#{personBean.person.alter}, " />
 	<h:outputText value="#{personBean.person.email} " />
-	<br></br>
 	<h:form>
 		<h:commandButton value="Modify" action="#{personBean.modify}"/>
 		</h:form>
 	</p>
 	
 	
-	<h:dataTable var="address" value="#{personBean.person.addresses}"  styleClass = "addressesTable"   headerClass = "addressesTableHeader"
+	<h:dataTable var="address" value="#{personBean.person.addresses}"  class="table"   headerClass = "thead-dark"
    rowClasses = "addressesTableOddRow,addressesTableEvenRow">
  <f:facet name="header">
    <h:outputText value="Adressen" />
@@ -45,7 +49,7 @@
  </h:column>
 </h:dataTable>
 	
-	
+	</div>
 </f:view>
 </body>
 </html>

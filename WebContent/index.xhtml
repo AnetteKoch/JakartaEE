@@ -5,9 +5,14 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 <title>Welcome to JSF</title>
+	<h:outputStylesheet library="default" name="css/bootstrap.min.css" />
+	<h:outputStylesheet library="default" name="css/bootstrap-responsive.min.css" />
+	<h:outputStylesheet library="default" name="css/styles.css" />
+	<h:outputScript library="default" name="js/bootstrap.min.js" />
 </h:head>
-<body bgcolor="#DCDCD0">
+<body id="htmlbody">
 <f:view>
+<div class="container">
 	<h1>Person und Adresse</h1>
 	<p><h:form>
 		<p>Name: </p>
@@ -55,7 +60,7 @@
 	</h:form></p>
 	<hr />
 	
-	
+	</div>
 </f:view>
 </body>
 </html>
