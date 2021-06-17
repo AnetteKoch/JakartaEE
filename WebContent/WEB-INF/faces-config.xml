@@ -63,6 +63,17 @@
 			<to-view-id>details.jsf</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	
+		<navigation-rule>
+		<from-view-id>/details.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{personBean.modify}</from-action>
+			<from-outcome>modify</from-outcome>
+			<to-view-id>index.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 
 
 	<!-- ========= -->

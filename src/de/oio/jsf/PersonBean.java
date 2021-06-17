@@ -9,6 +9,10 @@ import javax.inject.Named;
 @SessionScoped
 public class PersonBean implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Person person = new Person();
 
 	public Person getPerson() {
@@ -25,6 +29,12 @@ public class PersonBean implements Serializable {
 				|| person.getName().equals("") || person.getAlter()== 0 || person.getEmail() == null || person.getEmail().equals("")) {
 			result = null;
 		}
+		System.out.println(result);
+		return result;
+	}
+	
+	public String modify() {
+		String result = "modify";
 		System.out.println(result);
 		return result;
 	}

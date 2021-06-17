@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 

@@ -8,8 +8,8 @@ public class Person {
 	private String vorname;
 	private String name;
 	private String email;
-	private int alter;
-	private List<Address> addresses = new ArrayList<Address>();
+	private int alter = 25;
+	private List<Address> addresses;
 	
 	
 	public String getVorname() {
@@ -33,10 +33,23 @@ public class Person {
 		} 
 	}
 	public List<Address> getAddresses() {
+		addresses = new ArrayList<Address>();
+		Address address1 = new Address();
+		address1.setCity("Mannheim");
+		address1.setStreet("Hauptstraße");
+		address1.setZip(60126);
+		
+		Address address2 = new Address();
+		address2.setCity("Heidelberg");
+		address2.setStreet("Hauptstraße");
+		address2.setZip(60126);
+		
+		this.addresses.add(address1);
+		this.addresses.add(address2);
 		return addresses;
 	}
 	public void setAddresses(List<Address> addresses) {
-		
+
 	}
 	public String getEmail() {
 		return email;

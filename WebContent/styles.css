@@ -1,0 +1,21 @@
+.addressesTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.addressesTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.addressesTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFF; 
+}
+
+.addressesTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}

@@ -3,9 +3,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<h:head>
 <title>Welcome to JSF</title>
-</head>
+</h:head>
 <body bgcolor="#DCDCD0">
 <f:view>
 	<h1>Person und Adresse</h1>
@@ -37,14 +37,6 @@
 	</h:form></p>
 	
 	<hr />
-	<h1>Ausgabe</h1>
-	<p>
-	<h:outputText value="#{personBean.person.name}, " />
-	<h:outputText value="#{personBean.person.vorname}, " />
-	<h:outputText value="#{personBean.person.alter}, " />
-	<h:outputText value="#{personBean.person.email}, " />
-	
-	</p>
 	
 	<h1>Congratulations</h1>
 	<p><h:outputText value="#{helloBean.helloString}" /></p>

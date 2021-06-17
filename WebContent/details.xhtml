@@ -13,9 +13,38 @@
 	<h:outputText value="#{personBean.person.name}, " />
 	<h:outputText value="#{personBean.person.vorname}, " />
 	<h:outputText value="#{personBean.person.alter}, " />
-	<h:outputText value="#{personBean.person.email}, " />
-	
+	<h:outputText value="#{personBean.person.email} " />
+	<br></br>
+	<h:form>
+		<h:commandButton value="Modify" action="#{personBean.modify}"/>
+		</h:form>
 	</p>
+	
+	
+	<h:dataTable var="address" value="#{personBean.person.addresses}"  styleClass = "addressesTable"   headerClass = "addressesTableHeader"
+   rowClasses = "addressesTableOddRow,addressesTableEvenRow">
+ <f:facet name="header">
+   <h:outputText value="Adressen" />
+ </f:facet>
+ <h:column>
+	 <f:facet name="header">
+   	<h:outputText value="City" />
+ 	</f:facet>
+   <h:outputText value="#{address.city}" />
+ </h:column>
+ <h:column>
+ <f:facet name="header">
+   	<h:outputText value="Street" />
+ 	</f:facet>
+   <h:outputText value="#{address.street}" />
+ </h:column>
+  <h:column><f:facet name="header">
+   	<h:outputText value="ZIP" />
+ 	</f:facet>
+   <h:outputText value="#{address.zip}" />
+ </h:column>
+</h:dataTable>
+	
 	
 </f:view>
 </body>
