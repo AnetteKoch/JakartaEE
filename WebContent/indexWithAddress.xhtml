@@ -17,7 +17,7 @@
 			<h1>Person und Adresse</h1>
 			<p>
 				<h:form>
-					<p>Name:</p>
+				<p>Name:</p>
 					<h:inputText value="#{personBean.person.name}" size="40" />
 					<p>Vorname:</p>
 					<h:inputText value="#{personBean.person.vorname}" size="40" />
@@ -36,16 +36,17 @@
 							pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 					</h:inputText>
 					<h:message for="email" />
-					<h:commandButton value="Adresse hinzufügen"
-						action="#{personBean.addAddress}" />
+					<h:commandButton value="Adresse hinzufügen" action="#{personBean.addAddress}" />
 					<h:commandButton value="Speichern" action="#{personBean.submit}" />
 				</h:form>
+				<h:outputText value = "#{addressBean.address.street}" />
+				<h:outputText value = "#{addressBean.address.housenumber}" />
+				<h:outputText value = "#{addressBean.address.city}" />
+				<h:outputText value = "#{addressBean.address.zip}" />
 			</p>
-			<h2>Addressen:</h2>
-			<h:outputText value="#{addressBean.address.street}" />
-			<h:outputText value="#{addressBean.address.housenumber}" />
-			<h:outputText value="#{addressBean.address.city}" />
-			<h:outputText value="#{addressBean.address.zip}" />
+
+
+
 		</div>
 	</f:view>
 </body>

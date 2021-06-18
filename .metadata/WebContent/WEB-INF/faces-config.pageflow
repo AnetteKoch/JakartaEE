@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13189569081850" configfile="/JSF-01-HelloWorld/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf162384737941926" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf162384737941927" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="details.jsf" id="pf162384737941928" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf162384737941927" path="details.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf162384737941926" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf162384737941927 pf16240095728536" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="details.jsf" x="338" y="178" id="pf162384737941928" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf162384737941927 pf16240094565644" path="details.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="details.xhtml" x="122" y="562" id="pf16240083329940" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf16240083329941 pf16240083329942" path="/details.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.jsf" x="338" y="562" id="pf16240083329943" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf16240083329941 pf16240083329942" path="index.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="indexAddress.xhtml" id="pf16240094565645" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf16240094565644" path="/indexAddress.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="indexAddress.jsf" id="pf16240095728537" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16240095728536" path="indexAddress.jsf"/>
   <links id="pf162384737941927" target="pf162384737941928" source="pf162384737941926" outcome="details" fromaction="#{personBean.submit}"/>
+  <links id="pf16240083329941" target="pf16240083329943" source="pf16240083329940" outcome="modify" fromaction="#{personBean.modify}"/>
+  <links id="pf16240083329942" target="pf16240083329943" source="pf16240083329940" outcome="create" fromaction="#{personBean.create}"/>
+  <links id="pf16240094565644" target="pf162384737941928" source="pf16240094565645" outcome="indexWithAddress" fromaction="#{addressBean.submit}"/>
+  <links id="pf16240095728536" target="pf16240095728537" source="pf162384737941926" outcome="address" fromaction="#{personBean.addAddress}"/>
 </pageflow:Pageflow>

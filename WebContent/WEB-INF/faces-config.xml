@@ -64,6 +64,24 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{personBean.addAddress}</from-action>
+			<from-outcome>address</from-outcome>
+			<to-view-id>indexAddress.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/indexAddress.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{addressBean.submit}</from-action>
+			<from-outcome>indexWithAddress</from-outcome>
+			<to-view-id>index.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	
 		<navigation-rule>
 		<from-view-id>/details.xhtml</from-view-id>
@@ -73,6 +91,17 @@
 			<to-view-id>index.jsf</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/details.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{personBean.create}</from-action>
+			<from-outcome>create</from-outcome>
+			<to-view-id>index.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
 	
 
 
