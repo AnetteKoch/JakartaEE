@@ -2,14 +2,13 @@ package de.oio.jsf;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
 
 @Named(value = "personBean")
-@SessionScoped
+@ApplicationScoped
 public class PersonBean implements Serializable {
 
 	@Inject
@@ -45,7 +44,6 @@ public class PersonBean implements Serializable {
 
 	public String modify() {
 		String result = "modify";
-		
 		System.out.println(result);
 		return result;
 	}

@@ -2,12 +2,13 @@ package de.oio.jsf;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.Query;
 
 @Named(value = "addressBean")
-@SessionScoped
+@RequestScoped
 public class AddressBean implements Serializable {
 
 	/**
@@ -37,8 +38,10 @@ public class AddressBean implements Serializable {
 			result = null;
 		}
 		address.setPerson(personService.getPerson());
-		System.out.println(address.getPerson().toString());
+		address.getPerson().setAddresses(addressService.getAddresses(address.getPerson().getId()));
+		System.out.println(address.getPerson().getAddresses());
 		addressService.saveAddress(address);
+		
 		System.out.println(result);
 		return result;
 	}

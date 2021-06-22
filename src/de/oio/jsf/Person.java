@@ -4,6 +4,7 @@ package de.oio.jsf;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Person {
 	private String email;
 	private int alter = 25;
 	
-	@OneToMany(mappedBy="person")
+	@OneToMany(mappedBy="person", fetch = FetchType.EAGER)
 	private List<Address> addresses;
 
 	public Long getId() {
@@ -73,12 +74,6 @@ public class Person {
 		this.email = email;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", vorname=" + vorname + ", name=" + name + ", email=" + email + ", alter=" + alter
-				+ ", addresses=" + addresses + "]";
-	}
-	
 	
 
 }
