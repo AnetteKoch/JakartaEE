@@ -38,7 +38,7 @@ public class AddressBean implements Serializable {
 			result = null;
 		}
 		address.setPerson(personService.getPerson());
-		address.getPerson().setAddresses(addressService.getAddresses(address.getPerson().getId()));
+		address.getPerson().getAddresses().add(address);
 		System.out.println(address.getPerson().getAddresses());
 		addressService.saveAddress(address);
 		

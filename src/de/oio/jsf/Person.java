@@ -1,6 +1,7 @@
 package de.oio.jsf;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Person {
 	private int alter = 25;
 	
 	@OneToMany(mappedBy="person", fetch = FetchType.EAGER)
-	private List<Address> addresses;
+	private List<Address> addresses = new ArrayList<Address>(); 
 
 	public Long getId() {
 		return id;
