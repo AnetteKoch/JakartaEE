@@ -7,7 +7,8 @@
 <h:head>
 	<title>Welcome to JSF</title>
 	<h:outputStylesheet library="default" name="css/bootstrap.min.css" />
-	<h:outputStylesheet library="default" name="css/bootstrap-responsive.min.css" />
+	<h:outputStylesheet library="default"
+		name="css/bootstrap-responsive.min.css" />
 	<h:outputStylesheet library="default" name="css/styles.css" />
 	<h:outputScript library="default" name="js/bootstrap.min.js" />
 </h:head>
@@ -36,13 +37,14 @@
 							pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 					</h:inputText>
 					<h:message for="email" />
+					<br />
 					<h:commandButton value="Adresse hinzufügen"
 						action="#{personBean.addAddress}" />
 					<h:commandButton value="Speichern" action="#{personBean.submit}" />
 				</h:form>
 			</p>
 			<h2>Addressen:</h2>
-				<p:dataTable var="address" value="#{personBean.person.addresses}"
+			<p:dataTable var="address" value="#{addressBean.address}"
 				class="table" headerClass="thead-dark"
 				rowClasses="addressesTableOddRow,addressesTableEvenRow">
 				<f:facet name="header">
@@ -50,27 +52,35 @@
 				</f:facet>
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="City" />
+						<h:outputText value="Stadt" />
 					</f:facet>
 					<h:outputText value="#{address.city}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="ZIP" />
+						<h:outputText value="PLZ" />
 					</f:facet>
 					<h:outputText value="#{address.zip}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="Street" />
+						<h:outputText value="Straße" />
 					</f:facet>
 					<h:outputText value="#{address.street}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="Number" />
+						<h:outputText value="Hausnummer" />
 					</f:facet>
 					<h:outputText value="#{address.housenumber}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Bearbeiten" />
+					</f:facet>
+					<h:form>
+						<h:commandButton value="Bearbeiten" action="#{addressBean.modify}" />
+					</h:form>
 				</p:column>
 			</p:dataTable>
 		</div>

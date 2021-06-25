@@ -74,6 +74,15 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{addressBean.modify}</from-action>
+			<from-outcome>modifyAddress</from-outcome>
+			<to-view-id>/indexAddress.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id>/indexAddress.xhtml</from-view-id>
 		<navigation-case>
 		<from-action>#{addressBean.submit}</from-action>
@@ -87,7 +96,7 @@
 		<from-view-id>/details.xhtml</from-view-id>
 		<navigation-case>
 		<from-action>#{personBean.modify}</from-action>
-			<from-outcome>modify</from-outcome>
+			<from-outcome>modifyPerson</from-outcome>
 			<to-view-id>/index.jsf</to-view-id>
 		</navigation-case>
 	</navigation-rule>

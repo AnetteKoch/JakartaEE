@@ -22,10 +22,15 @@ public class AddressBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	Address address = new Address();
-
+	
+	@Inject
+	private PersonBean personBean;
+	
 	public Address getAddress() {
 		return address;
 	}
+	
+	Person person;
 
 	public void setAddress(Address address) {
 		this.address = address;
@@ -37,17 +42,29 @@ public class AddressBean implements Serializable {
 				|| address.getStreet().equals(null) || address.getZip() == 0) {
 			result = null;
 		}
+		Person person = personBean.getPerson();
 		address.setPerson(personService.getPerson());
-		address.getPerson().getAddresses().add(address);
 		System.out.println(address.getPerson().getAddresses());
-		addressService.saveAddress(address);
-		
+		if(person.getAddresses().size() > 0) {
+		address.setId(person.getAddresses().get(Math.toIntExact(person.getId())-1).getId());
+		}
+		if(address.getId()== null) {
+			address.getPerson().getAddresses().add(address);
+			this.addressService.saveAddress(address);
+		}
+		else {
+			this.addressService.updateAddress(address);
+		}		
 		System.out.println(result);
 		return result;
 	}
 
 	public String modify() {
-		String result = "modify";
+		Person person = personBean.getPerson();
+		address.setPerson(personService.getPerson());
+		System.out.println(person.getId());
+		this.setAddress(person.getAddresses().get(Math.toIntExact(person.getId())-1));
+		String result = "modifyAddress";
 		System.out.println(result);
 		return result;
 	}

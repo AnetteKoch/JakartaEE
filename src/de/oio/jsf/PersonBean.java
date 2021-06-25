@@ -43,7 +43,7 @@ public class PersonBean implements Serializable {
 	}
 
 	public String modify() {
-		String result = "modify";
+		String result = "modifyPerson";
 		System.out.println(result);
 		return result;
 	}
