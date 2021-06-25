@@ -23,7 +23,7 @@ public class Person {
 	private int alter = 25;
 	
 	@OneToMany(mappedBy="person", fetch = FetchType.EAGER)
-	private List<Address> addresses = new ArrayList<Address>(); 
+	private List<Address> addresses = new ArrayList(); 
 
 	public Long getId() {
 		return id;

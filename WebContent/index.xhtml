@@ -44,12 +44,18 @@
 				</h:form>
 			</p>
 			<h2>Addressen:</h2>
-			<p:dataTable var="address" value="#{addressBean.address}"
+			<p:dataTable var="address" value="#{personBean.person.addresses}"
 				class="table" headerClass="thead-dark"
 				rowClasses="addressesTableOddRow,addressesTableEvenRow">
 				<f:facet name="header">
 					<h:outputText value="Adressen" />
 				</f:facet>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{address.id}" />
+				</p:column>
 				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Stadt" />
@@ -79,7 +85,9 @@
 						<h:outputText value="Bearbeiten" />
 					</f:facet>
 					<h:form>
-						<h:commandButton value="Bearbeiten" action="#{addressBean.modify}" />
+						<h:commandButton value="Bearbeiten" action="#{addressBean.modify(address.id)}">
+							<f:param name="id" value="#{address.id}"/>
+						</h:commandButton>
 					</h:form>
 				</p:column>
 			</p:dataTable>

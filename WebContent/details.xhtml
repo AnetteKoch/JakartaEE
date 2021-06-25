@@ -57,6 +57,18 @@
 					<h:outputText value="#{address.housenumber}" />
 				</p:column>
 			</p:dataTable>
+			<h1>Anzeigen:</h1>
+			<div class="ui-fluid p-formgrid p-grid">
+				<div class="p-field p-col-12 p-md-4">
+					<p:outputLabel for="@next" value="Basic" />
+					<p:selectOneMenu id="option" value="#{personBean.selectedItem}">
+						<f:selectItems value="#{personBean.names}" />
+					</p:selectOneMenu>
+					<h:form>
+					<h:commandButton value="Anzeigen" action="#{personBean.show}" />
+				</h:form>
+				</div>
+			</div>
 		</div>
 	</f:view>
 </h:body>

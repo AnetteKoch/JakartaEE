@@ -38,5 +38,11 @@ public class AddressService implements Serializable{
 		List<Address> addresses = query.getResultList();
 		return addresses;
 	}
+	
+	@Transactional
+	public Address getAddress(Long id) {
+		Address address = entityManager.find(Address.class, id);
+		return address;
+	}
 
 }

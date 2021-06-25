@@ -76,7 +76,7 @@
 	<navigation-rule>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
-		<from-action>#{addressBean.modify}</from-action>
+		<from-action>#{addressBean.modify()}</from-action>
 			<from-outcome>modifyAddress</from-outcome>
 			<to-view-id>/indexAddress.jsf</to-view-id>
 		</navigation-case>
